@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=6">
+<link rel="stylesheet" href="assets/style.css?v=7">
 
 </head>
 <body>
@@ -158,6 +158,31 @@
   </div>
 </footer>
 
+
+<dialog class="join-dialog" id="join-dialog" aria-labelledby="join-title">
+  <button class="jd-close" type="button" id="jd-close" aria-label="Close">&times;</button>
+  <div class="jd-head">
+    <img src="assets/label-logo.jpg" alt="" width="64" height="64">
+    <p class="jd-eyebrow">Dandelion Musica</p>
+    <h2 id="join-title">Never miss a release.</h2>
+    <p class="jd-sub">New music from the label in your inbox, about once a month. Pre-orders, premieres and free downloads first.</p>
+  </div>
+  <form class="jd-form" id="jd-form" novalidate>
+    <label for="jd-email">Your email</label>
+    <div class="jd-row">
+      <input id="jd-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+      <button class="btn btn-gold" type="submit" id="jd-submit">Join</button>
+    </div>
+    <p class="jd-error" id="jd-error" role="alert" hidden></p>
+    <p class="jd-fine">Free. Unsubscribe anytime. We never share your email.</p>
+  </form>
+  <div class="jd-done" id="jd-done" hidden tabindex="-1">
+    <h3>You're on the list.</h3>
+    <p>One more step: follow us where you listen.</p>
+    <div class="jd-follow" id="jd-follow"></div>
+  </div>
+</dialog>
+
 <aside class="player" id="player" aria-label="Label radio player">
   <button class="play" id="play-btn" aria-expanded="false" aria-controls="player-panel">
     <span class="play-icon" aria-hidden="true"></span>
@@ -168,7 +193,7 @@
   <div class="player-panel" id="player-panel" hidden></div>
 </aside>
 
-<script src="assets/app.js?v=6"></script>
+<script src="assets/app.js?v=7"></script>
 
 </body>
 </html>

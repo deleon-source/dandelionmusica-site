@@ -23,6 +23,7 @@
   function renderHero(releases) {
     var r = releases.find(isUpcoming) || releases[0];
     if (!r) return;
+    heroRelease = r;
     var up = isUpcoming(r);
     $("hero-bg").style.backgroundImage = "url('" + r.cover + "')";
     var img = $("hero-cover"); img.src = r.cover; img.alt = r.title + " cover art";
@@ -172,6 +173,35 @@
     }, true);
   }
 
+  // "Join the list" opens a label sign-up panel on the site instead of leaving for Hypeddit.
+  var heroRelease = null;
+  function setupJoin(site) {
+    var dlg = $("join-dialog"); if (!dlg || !site.joinForm || typeof dlg.showModal !== "function") return;
+    var form = $("jd-form"), email = $("jd-email"), err = $("jd-error"), done = $("jd-done"), submit = $("jd-submit");
+    var follow = [ext("https://open.spotify.com/playlist/" + site.playlistId, "Follow the label playlist", "btn btn-teal")];
+    follow.push(ext("https://open.spotify.com/artist/2L7urxohEpC0dwR5FsZLcM", "Follow Danny Deleon", "btn btn-ghost"));
+    if (heroRelease && isUpcoming(heroRelease) && heroRelease.links && heroRelease.links.presave) follow.unshift(ext(heroRelease.links.presave, "Pre-save " + heroRelease.title, "btn btn-gold"));
+    $("jd-follow").innerHTML = follow.join("");
+    document.querySelectorAll('a[href="' + site.joinUrl + '"], .join-link').forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); err.hidden = true; dlg.showModal(); setTimeout(function () { (done.hidden ? email : done).focus(); }, 30); });
+    });
+    $("jd-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = "Enter a valid email address, like name@gmail.com."; err.hidden = false; email.focus(); return; }
+      err.hidden = true; submit.disabled = true; submit.textContent = "Joining…";
+      var fd = new FormData(); fd.append(site.joinForm.emailField, v);
+      fetch(site.joinForm.action, { method: "POST", mode: "no-cors", body: fd }).then(function () {
+        err.hidden = true; form.hidden = true; done.hidden = false; done.focus();
+        if (window.fbq) window.fbq("track", "CompleteRegistration", { content_name: "Join the list" });
+      }).catch(function () {
+        err.textContent = "That didn't go through. Check your connection and try again."; err.hidden = false;
+      }).then(function () { submit.disabled = false; submit.textContent = "Join"; });
+    });
+  }
+
   function renderSite(site) {
     var soc = site.social || {};
     $("social").innerHTML = Object.keys(soc).map(function (brand) {
@@ -180,6 +210,7 @@
     if (site.listen) renderListen(site.listen);
     if (site.bookingEmail) $("booking").innerHTML = "Bookings, licensing and press: " + esc(site.bookingEmail);
     setupPixel(site);
+    setupJoin(site);
     var cta = site.demoFormUrl
       ? ext(site.demoFormUrl, "Submit a demo", "btn btn-gold btn-lg") + "<small>Takes 2 minutes. We reply within 3 weeks if it fits.</small>"
       : '<a class="btn btn-gold btn-lg" href="mailto:' + esc(site.demoEmail) + '?subject=Demo%20for%20Dandelion%20Musica">Email your demo</a><small>' + esc(site.demoEmail) + "</small>";

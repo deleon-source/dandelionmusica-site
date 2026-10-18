@@ -116,5 +116,10 @@
       "SoundCloud": "https://soundcloud.com/dannydeleonmusic",
       "Bandcamp": "https://dannydeleon.bandcamp.com/"
     }
+  },
+  "joinForm": {
+    "action": "https://docs.google.com/forms/d/e/1FAIpQLSdqIX7RV5hbKYhXybXvYmr0U5wH5kt9y6bHk5RHGVGhmqkkLA/formResponse",
+    "emailField": "entry.1492796727",
+    "sheetOwner": "demo@dandelionmusica.com (Google Form: Dandelion Musica – Join the list)"
   }
 }
