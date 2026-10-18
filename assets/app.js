@@ -179,7 +179,8 @@
     var dlg = $("join-dialog"); if (!dlg || !site.joinForm || typeof dlg.showModal !== "function") return;
     var form = $("jd-form"), email = $("jd-email"), err = $("jd-error"), done = $("jd-done"), submit = $("jd-submit");
     var follow = [ext("https://open.spotify.com/playlist/" + site.playlistId, "Follow the label playlist", "btn btn-teal")];
-    follow.push(ext("https://open.spotify.com/artist/2L7urxohEpC0dwR5FsZLcM", "Follow Danny Deleon", "btn btn-ghost"));
+    var ig = site.social && site.social["Dandelion Musica"] && site.social["Dandelion Musica"].Instagram;
+    if (ig) follow.push(ext(ig, "Follow Dandelion Musica on Instagram", "btn btn-ghost"));
     if (heroRelease && isUpcoming(heroRelease) && heroRelease.links && heroRelease.links.presave) follow.unshift(ext(heroRelease.links.presave, "Pre-save " + heroRelease.title, "btn btn-gold"));
     $("jd-follow").innerHTML = follow.join("");
     document.querySelectorAll('a[href="' + site.joinUrl + '"], .join-link').forEach(function (a) {
