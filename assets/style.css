@@ -273,3 +273,6 @@ body.paused .hero.ready .vinyl{animation:vspin 2.4s linear 1s infinite;animation
   .record{--cover:min(68vw,340px);--slide:26%;margin-right:calc(var(--cover) * .26)}
 }
 @media (prefers-reduced-motion:reduce){.hero.ready .vinyl{animation:none}}
+/* reduce-motion users: ticker stops, record still spins (Pause motion stops everything) */
+body.calm .ticker-track{animation:none}
+@media (prefers-reduced-motion:reduce){.hero.ready .vinyl{animation:vspin 2.4s linear 1s infinite}body.paused .hero.ready .vinyl{animation-play-state:paused}}

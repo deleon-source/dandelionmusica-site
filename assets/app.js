@@ -188,7 +188,7 @@
     var b = $("ticker-pause"); if (!b) return;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var set = function (on) { document.body.classList.toggle("paused", on); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "Play motion" : "Pause motion"; };
-    if (reduce) set(true);
+    if (reduce) document.body.classList.add("calm"); // ticker stops for reduce-motion users; the record keeps spinning unless they press Pause
     b.addEventListener("click", function () { set(!document.body.classList.contains("paused")); });
   })();
 
