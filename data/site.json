@@ -1,24 +1,102 @@
 {
   "_howto": "listen = the Listen everywhere cards (group: stream, watch, buy). social = footer links, one block per brand. pixelId = Meta pixel, loads only on the live domain.",
   "demoFormUrl": "",
-  "demoEmail": "deleonmusik@gmail.com",
-  "bookingEmail": "deleonmusik@gmail.com",
+  "demoEmail": "submission@dandelionmusica.com",
+  "bookingEmail": "bookings@dandelionmusica.com",
   "joinUrl": "https://hypeddit.com/dannydeleon",
   "playlistId": "5TEbgKETPi8S1HdR4l86Ad",
   "pixelId": "6256459517799445",
   "liveDomain": "dandelionmusica.com",
   "listen": [
-    {"group": "stream", "platform": "Spotify", "title": "Dandelion Musica Playlist", "meta": "The label's picks, updated every release", "cta": "Follow playlist", "url": "https://open.spotify.com/playlist/5TEbgKETPi8S1HdR4l86Ad", "player": true},
-    {"group": "stream", "platform": "Spotify", "title": "Danny Deleon", "meta": "Artist profile", "cta": "Follow on Spotify", "url": "https://open.spotify.com/artist/2L7urxohEpC0dwR5FsZLcM"},
-    {"group": "stream", "platform": "Apple Music", "title": "Danny Deleon", "meta": "Artist profile", "cta": "Listen on Apple Music", "url": "https://music.apple.com/us/artist/danny-deleon/1467808615"},
-    {"group": "stream", "platform": "SoundCloud", "title": "Danny Deleon", "meta": "Tracks, edits and DJ mixes", "cta": "Follow on SoundCloud", "url": "https://soundcloud.com/dannydeleonmusic"},
-    {"group": "watch", "platform": "YouTube", "title": "Danny Deleon Music", "meta": "49 videos", "cta": "Watch playlist", "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwWzrr-NIsVqd52qIwW2WOVY"},
-    {"group": "watch", "platform": "YouTube", "title": "Studio Shorts", "meta": "Tech House and Afro/Latin House in the studio", "cta": "Watch playlist", "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwXiTY82WAfWPoRu_zq0XMDG"},
-    {"group": "watch", "platform": "YouTube", "title": "Live Sets", "meta": "Full DJ sets", "cta": "Watch playlist", "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwXduj6TzZTW_K9QX9zm9nQ2"},
-    {"group": "watch", "platform": "YouTube", "title": "Studio Keys & Instrument Progress", "meta": "Behind the music", "cta": "Watch playlist", "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwWq0lfrccAPFm800DGr4Y_y"},
-    {"group": "buy", "platform": "Bandcamp", "title": "Buy direct", "meta": "Most of your money goes straight to the artist", "cta": "Shop on Bandcamp", "url": "https://dannydeleon.bandcamp.com/"},
-    {"group": "buy", "platform": "Traxsource", "title": "DJ downloads", "meta": "WAV and MP3, label catalog", "cta": "Shop Traxsource", "url": "https://www.traxsource.com/label/72242/dandelion-musica"},
-    {"group": "buy", "platform": "Beatport", "title": "DJ downloads", "meta": "Full Dandelion Musica catalog", "cta": "Shop Beatport", "url": "https://www.beatport.com/label/dandelion-musica/124912"}
+    {
+      "group": "stream",
+      "platform": "Spotify",
+      "title": "Dandelion Musica Playlist",
+      "meta": "The label's picks, updated every release",
+      "cta": "Follow playlist",
+      "url": "https://open.spotify.com/playlist/5TEbgKETPi8S1HdR4l86Ad",
+      "player": true
+    },
+    {
+      "group": "stream",
+      "platform": "Spotify",
+      "title": "Danny Deleon",
+      "meta": "Artist profile",
+      "cta": "Follow on Spotify",
+      "url": "https://open.spotify.com/artist/2L7urxohEpC0dwR5FsZLcM"
+    },
+    {
+      "group": "stream",
+      "platform": "Apple Music",
+      "title": "Danny Deleon",
+      "meta": "Artist profile",
+      "cta": "Listen on Apple Music",
+      "url": "https://music.apple.com/us/artist/danny-deleon/1467808615"
+    },
+    {
+      "group": "stream",
+      "platform": "SoundCloud",
+      "title": "Danny Deleon",
+      "meta": "Tracks, edits and DJ mixes",
+      "cta": "Follow on SoundCloud",
+      "url": "https://soundcloud.com/dannydeleonmusic"
+    },
+    {
+      "group": "watch",
+      "platform": "YouTube",
+      "title": "Danny Deleon Music",
+      "meta": "49 videos",
+      "cta": "Watch playlist",
+      "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwWzrr-NIsVqd52qIwW2WOVY"
+    },
+    {
+      "group": "watch",
+      "platform": "YouTube",
+      "title": "Studio Shorts",
+      "meta": "Tech House and Afro/Latin House in the studio",
+      "cta": "Watch playlist",
+      "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwXiTY82WAfWPoRu_zq0XMDG"
+    },
+    {
+      "group": "watch",
+      "platform": "YouTube",
+      "title": "Live Sets",
+      "meta": "Full DJ sets",
+      "cta": "Watch playlist",
+      "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwXduj6TzZTW_K9QX9zm9nQ2"
+    },
+    {
+      "group": "watch",
+      "platform": "YouTube",
+      "title": "Studio Keys & Instrument Progress",
+      "meta": "Behind the music",
+      "cta": "Watch playlist",
+      "url": "https://www.youtube.com/playlist?list=PLsGnWuozZWwWq0lfrccAPFm800DGr4Y_y"
+    },
+    {
+      "group": "buy",
+      "platform": "Bandcamp",
+      "title": "Buy direct",
+      "meta": "Most of your money goes straight to the artist",
+      "cta": "Shop on Bandcamp",
+      "url": "https://dannydeleon.bandcamp.com/"
+    },
+    {
+      "group": "buy",
+      "platform": "Traxsource",
+      "title": "DJ downloads",
+      "meta": "WAV and MP3, label catalog",
+      "cta": "Shop Traxsource",
+      "url": "https://www.traxsource.com/label/72242/dandelion-musica"
+    },
+    {
+      "group": "buy",
+      "platform": "Beatport",
+      "title": "DJ downloads",
+      "meta": "Full Dandelion Musica catalog",
+      "cta": "Shop Beatport",
+      "url": "https://www.beatport.com/label/dandelion-musica/124912"
+    }
   ],
   "social": {
     "Dandelion Musica": {
