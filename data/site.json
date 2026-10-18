@@ -36,8 +36,8 @@
     {
       "group": "stream",
       "platform": "SoundCloud",
-      "title": "Danny Deleon",
-      "meta": "Tracks, edits and DJ mixes",
+      "title": "Dandelion Musica",
+      "meta": "Label releases, edits and DJ mixes",
       "cta": "Follow on SoundCloud",
       "url": "https://soundcloud.com/dannydeleonmusic"
     },
@@ -104,7 +104,8 @@
       "Facebook": "https://www.facebook.com/dandelionmusicaa",
       "Spotify playlist": "https://open.spotify.com/playlist/5TEbgKETPi8S1HdR4l86Ad",
       "Traxsource": "https://www.traxsource.com/label/72242/dandelion-musica",
-      "Beatport": "https://www.beatport.com/label/dandelion-musica/124912"
+      "Beatport": "https://www.beatport.com/label/dandelion-musica/124912",
+      "SoundCloud": "https://soundcloud.com/dannydeleonmusic"
     },
     "Danny Deleon": {
       "Instagram": "https://www.instagram.com/dannydeleon__/",
@@ -113,7 +114,6 @@
       "YouTube": "https://www.youtube.com/@Danny_Deleon",
       "Spotify": "https://open.spotify.com/artist/2L7urxohEpC0dwR5FsZLcM",
       "Apple Music": "https://music.apple.com/us/artist/danny-deleon/1467808615",
-      "SoundCloud": "https://soundcloud.com/dannydeleonmusic",
       "Bandcamp": "https://dannydeleon.bandcamp.com/"
     }
   },
