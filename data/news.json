@@ -1,0 +1,9 @@
+{
+  "_howto": "Newest first. Add one item per release milestone (pre-order opens, out now, chart news). image is optional.",
+  "news": [
+    {"date": "2026-10-23", "title": "As We Live: Traxsource exclusive pre-order opens", "text": "Danny Deleon and Morris Revy's Soulful House single lands on Traxsource two weeks before everywhere else.", "image": "covers/as-we-live.jpg", "link": "https://www.traxsource.com/label/72242/dandelion-musica"},
+    {"date": "2026-10-16", "title": "Pre-save As We Live, out Nov 6", "text": "Save it now and it drops into your library on release day.", "image": "covers/as-we-live.jpg", "link": "https://hypeddit.com/dannydeleon/aswelive"},
+    {"date": "2026-09-01", "title": "NOFKS joins the label with NONE AT ALL", "text": "A new name on the roster. Out now on Beatport and Traxsource.", "image": "covers/none-at-all.jpg", "link": "https://www.beatport.com/release/none-at-all-original/7315890"},
+    {"date": "2025-06-20", "title": "Shine (Richie Dio Remix) hits #9 in Afro House", "text": "Precious James and Danny Deleon's Shine, reworked by Richie Dio, reached #9 in Afro House and #83 overall on Traxsource during pre-order.", "image": "", "link": "https://www.traxsource.com/label/72242/dandelion-musica"}
+  ]
+}

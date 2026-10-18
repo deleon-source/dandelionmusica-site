@@ -1,0 +1,18 @@
+{
+  "_howto": "photo is the fallback picture. If spotify is set and livePhoto is true, the site swaps in the artist's current Spotify profile photo every time it loads.",
+  "artists": [
+    {"name": "Danny Deleon", "role": "Founder", "photo": "artists/danny-deleon.jpg", "spotify": "2L7urxohEpC0dwR5FsZLcM", "livePhoto": false, "beatport": "https://www.beatport.com/artist/danny-deleon/1047292"},
+    {"name": "Richie Dio", "photo": "artists/richie-dio.jpg", "spotify": "3UrPLsXTe9SpBoFtCJP8Db", "livePhoto": true, "beatport": "https://www.beatport.com/artist/richie-dio/1014699"},
+    {"name": "S.A.N.E", "photo": "artists/sane.jpg", "spotify": "", "livePhoto": false, "beatport": "https://www.beatport.com/artist/sane/1149376"},
+    {"name": "Precious James", "photo": "artists/precious-james.jpg", "spotify": "5zGPNSmoowo9ao6AUtKdoU", "livePhoto": false, "beatport": "https://www.beatport.com/artist/precious-james/960224"},
+    {"name": "Ceevox", "photo": "artists/ceevox.jpg", "spotify": "47vEtL6AF1ke8QWxtQSzEY", "livePhoto": true, "beatport": "https://www.beatport.com/artist/ceevox/789"},
+    {"name": "Jon Mavek", "photo": "artists/jon-mavek.jpg", "spotify": "745rqg9peWz6hxooPdx9qx", "livePhoto": true, "beatport": "https://www.beatport.com/artist/jon-mavek/699121"},
+    {"name": "Francisco Samuel", "photo": "artists/francisco-samuel.jpg", "spotify": "3Q9h0sg4W85FoWR0GJWwQ5", "livePhoto": true, "beatport": "https://www.beatport.com/artist/francisco-samuel/481464"},
+    {"name": "DJ Ody Roc", "photo": "artists/dj-ody-roc.jpg", "spotify": "6NoWdJt3dpx6s0tM9x2WtG", "livePhoto": true, "beatport": "https://www.beatport.com/artist/dj-ody-roc/151635"},
+    {"name": "NOFKS", "photo": "artists/nofks.jpg", "spotify": "32WtqdxZ3WLuDUOs3tPvTH", "livePhoto": true, "beatport": "https://www.beatport.com/artist/nofks/1555889"},
+    {"name": "Danny Boak", "photo": "artists/danny-boak.jpg", "spotify": "2qM3ZuVVs7lPE3nzgniJS0", "livePhoto": true, "beatport": "https://www.beatport.com/artist/danny-boak/485002"},
+    {"name": "Mark Salner", "photo": "artists/mark-salner.jpg", "spotify": "1R06D8v3ClvKVXWobziDsu", "livePhoto": true, "beatport": "https://www.beatport.com/artist/mark-salner/699823"},
+    {"name": "Morris Revy", "photo": "artists/morris-revy.jpg", "spotify": "0rUXMRIDIpyGKuIgHVNmIv", "livePhoto": true, "beatport": "https://www.beatport.com/artist/morris-revy/616082"},
+    {"name": "Brooklyn Terry", "photo": "artists/brooklyn-terry.jpg", "spotify": "3VARrYFgA7WzioGPg1354q", "livePhoto": true, "beatport": "https://www.beatport.com/artist/brooklyn-terry/798041"}
+  ]
+}
