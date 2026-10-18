@@ -44,8 +44,34 @@
       $("hero-meta").textContent = r.date ? "Released " + fmtLong(r.date) : "Out now on Dandelion Musica";
     }
     $("hero-actions").innerHTML = html;
+    setupPreview(r);
     var go = function () { $("hero").classList.add("ready"); };
     if (img.complete) setTimeout(go, 150); else img.addEventListener("load", function () { setTimeout(go, 150); });
+  }
+
+  // 30-second preview on the hero cover. The record spins faster while it plays.
+  function setupPreview(r) {
+    var rec = document.querySelector(".record"); if (!rec || !r.preview) return;
+    var audio = new Audio(r.preview); audio.preload = "none";
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "preview-btn"; btn.setAttribute("aria-pressed", "false");
+    btn.innerHTML = '<span class="pv-icon" aria-hidden="true"></span><span class="pv-text">Play 30s preview</span><span class="pv-bar" aria-hidden="true"><i></i></span>';
+    btn.setAttribute("aria-label", "Play 30-second preview of " + r.title);
+    rec.appendChild(btn);
+    var bar = btn.querySelector(".pv-bar i"), text = btn.querySelector(".pv-text"), hero = $("hero");
+    var set = function (on) {
+      btn.setAttribute("aria-pressed", String(on)); hero.classList.toggle("playing", on);
+      text.textContent = on ? "Pause preview" : (audio.currentTime > 0 && !audio.ended ? "Resume preview" : "Play 30s preview");
+      btn.setAttribute("aria-label", (on ? "Pause" : "Play") + " 30-second preview of " + r.title);
+    };
+    btn.addEventListener("click", function () {
+      if (audio.paused) {
+        var radio = $("play-btn"); if (radio && radio.getAttribute("aria-expanded") === "true") radio.click();
+        audio.play().then(function () { set(true); if (window.fbq) window.fbq("track", "ViewContent", { content_name: r.title + " preview" }); }).catch(function () { set(false); });
+      } else { audio.pause(); set(false); }
+    });
+    audio.addEventListener("timeupdate", function () { if (audio.duration) bar.style.width = (audio.currentTime / audio.duration * 100) + "%"; });
+    audio.addEventListener("ended", function () { audio.currentTime = 0; bar.style.width = "0"; set(false); });
   }
 
   function renderTicker(releases, news) {
