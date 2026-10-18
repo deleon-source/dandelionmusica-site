@@ -255,3 +255,21 @@ body.paused .hero.ready .vinyl{animation:none}
 .foot-brand{flex-direction:column;align-items:flex-start;gap:0}
 .foot-brand-row{display:flex;align-items:center;gap:16px}
 .foot-brand-row img{border-radius:50%}
+
+/* hero record v2: reserve room for the vinyl so it never covers the text; continuous spin */
+.hero-in{grid-template-columns:auto minmax(0,1fr);gap:var(--s5)}
+.record{--cover:min(34vw,440px);--slide:36%;width:var(--cover);max-width:100%;margin-right:calc(var(--cover) * .36)}
+.hero-copy{position:relative;z-index:3;min-width:0}
+.vinyl{background:
+  conic-gradient(from 0deg,rgba(255,255,255,0) 0deg,rgba(255,255,255,.10) 35deg,rgba(255,255,255,0) 80deg,rgba(255,255,255,0) 180deg,rgba(255,255,255,.08) 215deg,rgba(255,255,255,0) 260deg),
+  repeating-radial-gradient(circle,#111 0 2px,#1d1d1d 2px 4px)}
+.vinyl span{background:#fff url("label-logo.jpg") center/cover no-repeat;box-shadow:inset 0 0 0 4px var(--gold)}
+.vinyl span::after{inset:46%;background:var(--ink)}
+.hero.ready .vinyl{transform:translateX(var(--slide));animation:vspin 2.4s linear 1s infinite}
+@keyframes vspin{from{transform:translateX(var(--slide)) rotate(0deg)}to{transform:translateX(var(--slide)) rotate(360deg)}}
+body.paused .hero.ready .vinyl{animation:vspin 2.4s linear 1s infinite;animation-play-state:paused}
+@media (max-width:860px){
+  .hero-in{grid-template-columns:1fr}
+  .record{--cover:min(68vw,340px);--slide:26%;margin-right:calc(var(--cover) * .26)}
+}
+@media (prefers-reduced-motion:reduce){.hero.ready .vinyl{animation:none}}
