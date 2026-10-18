@@ -230,3 +230,28 @@ p{margin:0}
 .foot-row{justify-content:flex-start}
 .foot-row span{min-width:130px}
 @media (max-width:600px){.foot-row span{min-width:100%;margin-bottom:4px}}
+
+/* accessibility (WCAG 2.2 AA) */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:var(--ground);padding:12px 18px;border-radius:var(--r1);font-weight:700;text-decoration:none;transition:top .15s}
+.skip:focus{top:12px}
+main:focus{outline:none}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:var(--r1)}
+.join-band :focus-visible,.ticker :focus-visible,.artist:focus-visible{outline-color:var(--on-photo)}
+.artist:focus-visible{outline-offset:-4px}
+.ticker{position:relative}
+.ticker-pause{position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:2;background:var(--ink);color:var(--ground);border:1px solid #6b6258;border-radius:var(--pill);padding:6px 12px;min-height:30px;font:500 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:-24px 0 16px var(--ink)}
+.ticker-pause:hover{border-color:var(--ground)}
+body.paused .ticker-track,body.paused .live-dot{animation-play-state:paused}
+body.paused .ticker-track{animation:none}
+/* vinyl turns once (under 5 s) instead of looping forever */
+.hero.ready .vinyl{animation:spin 4s cubic-bezier(.3,.6,.3,1) .9s 1 both}
+body.paused .hero.ready .vinyl{animation:none}
+.live-dot{animation-iteration-count:2}
+/* pill controls: visible boundary at 3:1 and 24px targets */
+.rel-links a,.foot-row a,.foot-links a,.chip-line{border-color:#8A7F70}
+.lcard .go{display:inline-flex;align-items:center;min-height:28px}
+.a11y-note{color:var(--muted);font-size:13px;max-width:60ch;margin-top:8px}
+.foot-brand{flex-direction:column;align-items:flex-start;gap:0}
+.foot-brand-row{display:flex;align-items:center;gap:16px}
+.foot-brand-row img{border-radius:50%}

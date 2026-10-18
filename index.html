@@ -20,9 +20,11 @@
 
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
+
 <header class="top">
   <div class="wrap top-in">
-    <a class="brand" href="#top" aria-label="Dandelion Musica home">
+    <a class="brand" href="#main" aria-label="Dandelion Musica home">
       <img src="assets/label-logo.jpg" alt="" width="40" height="40">
       <span>Dandelion<br>Musica</span>
     </a>
@@ -38,7 +40,7 @@
   </div>
 </header>
 
-<main id="top">
+<main id="main" tabindex="-1">
   <section class="hero" id="hero" aria-label="Latest release">
     <div class="hero-bg" id="hero-bg"></div>
     <div class="wrap hero-in">
@@ -59,9 +61,11 @@
     </div>
   </section>
 
-  <div class="ticker" aria-label="Release status">
-    <div class="ticker-track" id="ticker"></div>
-  </div>
+  <section class="ticker" aria-label="Label updates">
+    <ul class="sr-only" id="ticker-sr"></ul>
+    <div class="ticker-track" id="ticker" aria-hidden="true"></div>
+    <button class="ticker-pause" id="ticker-pause" type="button" aria-pressed="false">Pause motion</button>
+  </section>
 
   <section class="section" id="releases">
     <div class="wrap">
@@ -146,14 +150,15 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <div class="foot-brand">
-      <img src="assets/label-logo.jpg" alt="" width="56" height="56">
-      <p>© <span id="year">2026</span> Dandelion Musica · Danny Deleon LLC</p>
+      <div class="foot-brand-row"><img src="assets/label-logo.jpg" alt="" width="56" height="56">
+      <p>© <span id="year">2026</span> Dandelion Musica · Danny Deleon LLC</p></div>
+      <p class="a11y-note">Accessibility: this site is built to WCAG 2.2 AA. If anything is hard to use, email deleonmusik@gmail.com and we will fix it.</p>
     </div>
     <div class="foot-social" id="social"></div>
   </div>
 </footer>
 
-<div class="player" id="player">
+<aside class="player" id="player" aria-label="Label radio player">
   <button class="play" id="play-btn" aria-expanded="false" aria-controls="player-panel">
     <span class="play-icon" aria-hidden="true"></span>
     <span class="play-text"><b>Dandelion Musica Radio</b><span>The label playlist</span></span>
@@ -161,7 +166,7 @@
   <span class="live-dot" aria-hidden="true"></span>
   <a class="player-link" href="https://open.spotify.com/playlist/5TEbgKETPi8S1HdR4l86Ad" target="_blank" rel="noopener">Open in Spotify</a>
   <div class="player-panel" id="player-panel" hidden></div>
-</div>
+</aside>
 
 <script src="assets/app.js"></script>
 

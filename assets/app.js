@@ -7,7 +7,8 @@
   var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
   var fmt = function (iso) { if (!iso) return ""; var p = iso.split("-"); return MONTHS[+p[1] - 1] + " " + (+p[2]); };
   var fmtLong = function (iso) { if (!iso) return ""; var p = iso.split("-"); return MONTHS[+p[1] - 1] + " " + (+p[2]) + ", " + p[0]; };
-  var ext = function (url, label, cls) { return '<a class="' + (cls || "") + '" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) + "</a>"; };
+  var NEWTAB = '<span class="sr-only"> (opens in new tab)</span>';
+  var ext = function (url, label, cls, aria) { return '<a class="' + (cls || "") + '" href="' + esc(url) + '" target="_blank" rel="noopener"' + (aria ? ' aria-label="' + esc(aria + " (opens in new tab)") + '"' : "") + ">" + esc(label) + (aria ? "" : NEWTAB) + "</a>"; };
   var LINK_LABELS = { presave: "Pre-save", traxsource: "Traxsource", beatport: "Beatport", spotify: "Spotify", apple: "Apple Music", youtube: "YouTube", soundcloud: "SoundCloud", bandcamp: "Bandcamp" };
 
   function load(name) {
@@ -56,7 +57,8 @@
     news.slice(0, 3).forEach(function (n) { items.push(esc(n.title)); });
     items.push("<b>Demos open</b> House · Techno · Disco · Indie Dance");
     var one = items.map(function (t) { return "<span>" + t + "</span>"; }).join("");
-    $("ticker").innerHTML = one + one; // doubled for a seamless loop
+    $("ticker").innerHTML = one + one; // doubled for a seamless loop (hidden from screen readers)
+    $("ticker-sr").innerHTML = items.map(function (t) { return "<li>" + t + "</li>"; }).join("");
   }
 
   function renderReleases(releases) {
@@ -64,13 +66,13 @@
       var up = isUpcoming(r), L = r.links || {};
       var main = (up ? L.presave : (L.smartlink || L.beatport || L.traxsource || L.spotify)) || "#";
       var links = Object.keys(L).filter(function (k) { return LINK_LABELS[k]; }).map(function (k) {
-        return ext(L[k], LINK_LABELS[k], k === "presave" ? "primary" : "");
+        return ext(L[k], LINK_LABELS[k], k === "presave" ? "primary" : "", LINK_LABELS[k] + ": " + r.title);
       }).join("");
       var badge = up ? '<span class="chip chip-clay rel-badge">' + esc("Out " + fmt(r.date)) + "</span>" : "";
       return '<article class="rel">' +
-        '<a class="rel-art" href="' + esc(main) + '" target="_blank" rel="noopener" aria-label="' + esc(r.title + " by " + r.artists) + '">' +
+        '<a class="rel-art" href="' + esc(main) + '" target="_blank" rel="noopener" aria-label="' + esc(r.title + " by " + r.artists + " (opens in new tab)") + '">' +
           '<img src="' + esc(r.cover) + '" alt="" loading="lazy" width="600" height="600">' + badge + '<span class="play-ov" aria-hidden="true"></span></a>' +
-        '<h3><a href="' + esc(main) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a></h3>" +
+        '<h3><a href="' + esc(main) + '" target="_blank" rel="noopener">' + esc(r.title) + NEWTAB + "</a></h3>" +
         "<p>" + esc(r.artists) + (r.genre ? " · " + esc(r.genre) : "") + "</p>" +
         '<div class="rel-links">' + links + "</div></article>";
     }).join("");
@@ -81,8 +83,8 @@
     grid.innerHTML = artists.map(function (a, i) {
       var href = a.spotify ? "https://open.spotify.com/artist/" + a.spotify : a.beatport;
       return '<a class="artist" href="' + esc(href) + '" target="_blank" rel="noopener">' +
-        '<img data-i="' + i + '" src="' + esc(a.photo) + '" alt="' + esc(a.name) + '" loading="lazy">' +
-        '<span class="artist-meta">' + (a.role ? "<em>" + esc(a.role) + "</em>" : "") + "<b>" + esc(a.name) + "</b><span>" + (a.spotify ? "Listen on Spotify" : "View on Beatport") + "</span></span></a>";
+        '<img data-i="' + i + '" src="' + esc(a.photo) + '" alt="" loading="lazy">' +
+        '<span class="artist-meta">' + (a.role ? "<em>" + esc(a.role) + "</em>" : "") + "<b>" + esc(a.name) + "</b><span>" + (a.spotify ? "Listen on Spotify" : "View on Beatport") + "</span></span>" + NEWTAB + "</a>";
     }).join("");
     $("roster-count").textContent = artists.length + " artists";
     // Live profile photos: pull each artist's current Spotify picture.
@@ -102,7 +104,7 @@
   function renderNews(news) {
     $("news-grid").innerHTML = news.map(function (n) {
       var img = n.image ? '<div class="news-img"><img src="' + esc(n.image) + '" alt="" loading="lazy"></div>' : '<div class="news-img fallback" aria-hidden="true">DM</div>';
-      return '<a class="news" href="' + esc(n.link || "#") + '" target="_blank" rel="noopener">' + img +
+      return '<a class="news" href="' + esc(n.link || "#") + '" target="_blank" rel="noopener">' + img + NEWTAB +
         '<div class="news-body"><time datetime="' + esc(n.date) + '">' + esc(fmtLong(n.date)) + "</time><h3>" + esc(n.title) + "</h3><p>" + esc(n.text) + "</p></div></a>";
     }).join("");
   }
@@ -118,7 +120,7 @@
         return '<div class="lcard" style="--c:' + (PLATFORM_COLOR[i.platform] || "var(--gold)") + '">' +
           '<span class="plat"><i aria-hidden="true"></i>' + esc(i.platform) + "</span>" +
           "<b>" + esc(i.title) + "</b><p>" + esc(i.meta) + "</p>" +
-          '<div class="lcard-actions">' + ext(i.url, i.cta, "go") + play + "</div></div>";
+          '<div class="lcard-actions">' + ext(i.url, i.cta, "go", i.cta + ": " + i.title + " on " + i.platform) + play + "</div></div>";
       }).join("");
       return cards ? '<div class="listen-group"><h3>' + GROUP_NAME[g] + '</h3><div class="listen-row">' + cards + "</div></div>" : "";
     }).join("");
@@ -147,7 +149,7 @@
   function renderSite(site) {
     var soc = site.social || {};
     $("social").innerHTML = Object.keys(soc).map(function (brand) {
-      return '<div class="foot-row"><span>' + esc(brand) + "</span>" + Object.keys(soc[brand]).map(function (k) { return ext(soc[brand][k], k); }).join("") + "</div>";
+      return '<div class="foot-row"><span>' + esc(brand) + "</span>" + Object.keys(soc[brand]).map(function (k) { return ext(soc[brand][k], k, "", k + ", " + brand); }).join("") + "</div>";
     }).join("");
     if (site.listen) renderListen(site.listen);
     if (site.bookingEmail) $("booking").innerHTML = "Bookings, licensing and press: " + esc(site.bookingEmail);
@@ -175,6 +177,20 @@
   }
 
   $("year").textContent = new Date().getFullYear();
+
+  // Static links in the HTML that open a new tab get the same screen-reader notice.
+  document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+    if (!a.querySelector(".sr-only") && !a.hasAttribute("aria-label")) a.insertAdjacentHTML("beforeend", NEWTAB);
+  });
+
+  // One control pauses every moving element (WCAG 2.2.2).
+  (function () {
+    var b = $("ticker-pause"); if (!b) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var set = function (on) { document.body.classList.toggle("paused", on); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "Play motion" : "Pause motion"; };
+    if (reduce) set(true);
+    b.addEventListener("click", function () { set(!document.body.classList.contains("paused")); });
+  })();
 
   Promise.all([load("releases"), load("artists"), load("news"), load("site")]).then(function (d) {
     var releases = d[0].releases, artists = d[1].artists, news = d[2].news, site = d[3];
