@@ -7,7 +7,7 @@
   --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:40px; --s6:64px;
   --r1:4px; --r2:12px; --pill:999px;
   --wrap:1240px; --gutter:clamp(16px,4vw,40px);
-  color-scheme:light;
+  color-scheme:only light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
