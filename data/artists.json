@@ -1,7 +1,7 @@
 {
   "_howto": "photo is the fallback picture. If spotify is set and livePhoto is true, the site swaps in the artist's current Spotify profile photo every time it loads.",
   "artists": [
-    {"name": "Danny Deleon", "role": "Founder", "photo": "artists/danny-deleon.jpg", "spotify": "2L7urxohEpC0dwR5FsZLcM", "livePhoto": false, "beatport": "https://www.beatport.com/artist/danny-deleon/1047292"},
+    {"name": "Danny Deleon", "role": "Founder", "photo": "artists/danny-deleon.jpg", "website": "https://dannydeleon.com/", "spotify": "2L7urxohEpC0dwR5FsZLcM", "livePhoto": false, "beatport": "https://www.beatport.com/artist/danny-deleon/1047292"},
     {"name": "Richie Dio", "photo": "artists/richie-dio.jpg", "spotify": "3UrPLsXTe9SpBoFtCJP8Db", "livePhoto": true, "beatport": "https://www.beatport.com/artist/richie-dio/1014699"},
     {"name": "S.A.N.E", "photo": "artists/sane.jpg", "spotify": "", "livePhoto": false, "beatport": "https://www.beatport.com/artist/sane/1149376"},
     {"name": "Precious James", "photo": "artists/precious-james.jpg", "spotify": "5zGPNSmoowo9ao6AUtKdoU", "livePhoto": false, "beatport": "https://www.beatport.com/artist/precious-james/960224"},

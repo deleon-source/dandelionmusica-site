@@ -108,10 +108,10 @@
   function renderArtists(artists) {
     var grid = $("artist-grid");
     grid.innerHTML = artists.map(function (a, i) {
-      var href = a.spotify ? "https://open.spotify.com/artist/" + a.spotify : a.beatport;
+      var href = a.website || (a.spotify ? "https://open.spotify.com/artist/" + a.spotify : a.beatport);
       return '<a class="artist" href="' + esc(href) + '" target="_blank" rel="noopener">' +
         '<img data-i="' + i + '" src="' + esc(a.photo) + '" alt="" loading="lazy">' +
-        '<span class="artist-meta">' + (a.role ? "<em>" + esc(a.role) + "</em>" : "") + "<b>" + esc(a.name) + "</b><span>" + (a.spotify ? "Listen on Spotify" : "View on Beatport") + "</span></span>" + NEWTAB + "</a>";
+        '<span class="artist-meta">' + (a.role ? "<em>" + esc(a.role) + "</em>" : "") + "<b>" + esc(a.name) + "</b><span>" + (a.website ? "Visit dannydeleon.com" : a.spotify ? "Listen on Spotify" : "View on Beatport") + "</span></span>" + NEWTAB + "</a>";
     }).join("");
     $("roster-count").textContent = artists.length + " artists";
     // Live profile photos: pull each artist's current Spotify picture.
