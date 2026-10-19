@@ -251,7 +251,10 @@
   })();
 
   Promise.all([load("releases"), load("artists"), load("news"), load("site")]).then(function (d) {
-    var releases = d[0].releases, artists = d[1].artists, news = d[2].news, site = d[3];
+    var releases = d[0].releases, artists = d[1].artists, site = d[3];
+    // News dated in the future stays hidden until that day (e.g. "pre-order opens" goes up on the day it opens)
+    var todayIso = new Date(Date.now() - new Date().getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+    var news = d[2].news.filter(function (n) { return !n.date || n.date <= todayIso; });
     renderHero(releases); renderTicker(releases, news); renderReleases(releases);
     renderArtists(artists); renderNews(news); renderSite(site);
   }).catch(function (e) { console.error("Site data failed to load:", e); });
