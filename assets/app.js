@@ -9,7 +9,7 @@
   var fmtLong = function (iso) { if (!iso) return ""; var p = iso.split("-"); return MONTHS[+p[1] - 1] + " " + (+p[2]) + ", " + p[0]; };
   var NEWTAB = '<span class="sr-only"> (opens in new tab)</span>';
   var ext = function (url, label, cls, aria) { return '<a class="' + (cls || "") + '" href="' + esc(url) + '" target="_blank" rel="noopener"' + (aria ? ' aria-label="' + esc(aria + " (opens in new tab)") + '"' : "") + ">" + esc(label) + (aria ? "" : NEWTAB) + "</a>"; };
-  var LINK_LABELS = { presave: "Pre-save", traxsource: "Traxsource", beatport: "Beatport", spotify: "Spotify", apple: "Apple Music", youtube: "YouTube", soundcloud: "SoundCloud", bandcamp: "Bandcamp" };
+  var LINK_LABELS = { presave: "Pre-save", traxsource: "Traxsource", beatport: "Beatport", spotify: "Spotify", apple: "Apple Music", youtube: "YouTube", soundcloud: "SoundCloud", bandcamp: "Bandcamp", free: "Free download" };
 
   function load(name) {
     return fetch("data/" + name + ".json", { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(name); return r.json(); });
