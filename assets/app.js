@@ -91,15 +91,15 @@
   function renderReleases(releases) {
     $("release-grid").innerHTML = releases.map(function (r) {
       var up = isUpcoming(r), L = r.links || {};
-      var main = (up ? L.presave : (L.smartlink || L.beatport || L.traxsource || L.spotify)) || "#";
       var links = Object.keys(L).filter(function (k) { return LINK_LABELS[k]; }).map(function (k) {
         return ext(L[k], LINK_LABELS[k], k === "presave" ? "primary" : "", LINK_LABELS[k] + ": " + r.title);
       }).join("");
       var badge = up ? '<span class="chip chip-clay rel-badge">' + esc("Out " + fmt(r.date)) + "</span>" : "";
+      var page = "music/" + String(r.title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") + "/";
       return '<article class="rel">' +
-        '<a class="rel-art" href="' + esc(main) + '" target="_blank" rel="noopener" aria-label="' + esc(r.title + " by " + r.artists + " (opens in new tab)") + '">' +
+        '<a class="rel-art" href="' + page + '" aria-label="' + esc(r.title + " by " + r.artists) + '">' +
           '<img src="' + esc(r.cover) + '" alt="" loading="lazy" width="600" height="600">' + badge + '<span class="play-ov" aria-hidden="true"></span></a>' +
-        '<h3><a href="' + esc(main) + '" target="_blank" rel="noopener">' + esc(r.title) + NEWTAB + "</a></h3>" +
+        '<h3><a href="' + page + '">' + esc(r.title) + "</a></h3>" +
         "<p>" + esc(r.artists) + (r.genre ? " · " + esc(r.genre) : "") + "</p>" +
         '<div class="rel-links">' + links + "</div></article>";
     }).join("");

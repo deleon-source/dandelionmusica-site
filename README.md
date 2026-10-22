@@ -24,3 +24,8 @@ data/site.json: demo form URL, demo email, join-the-list link, label playlist ID
 
 ## Brand
 Day theme (light) from the Dandelion Musica brand system: Cloud Dancer ground, deep gold, Transformative Teal buttons, Divine Damson band. Fonts: Syne, Manrope, IBM Plex Mono.
+
+## Release pages and sitemap
+Every release gets its own page at /music/<slug>/ (slug = title in lowercase, dashes). After any edit to data/releases.json run:
+    python3 tools/build_pages.py
+It rebuilds the release pages, sitemap.xml and robots.txt. Commit the results.

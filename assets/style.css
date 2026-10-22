@@ -317,3 +317,15 @@ body.calm .ticker-track{animation:none}
 .jd-follow{display:flex;flex-direction:column;gap:10px;margin-top:6px}
 .jd-follow .btn{width:100%}
 .join-dialog [hidden]{display:none!important}
+
+/* release pages (music/<slug>/) */
+.rp{padding-top:var(--s5)}
+.rp-in{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:var(--s5);align-items:center}
+.rp-cover{width:100%;height:auto;border-radius:var(--r2);box-shadow:0 20px 50px rgba(23,19,15,.18)}
+.rp-copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start;min-width:0}
+.rp-copy h1{font-size:clamp(40px,6vw,72px)}
+.rp-desc{max-width:52ch;color:var(--muted);font-size:17px}
+.rp-audio{width:100%;max-width:420px}
+.rp-small{font-size:14px;color:var(--muted)}
+.rp-small a{color:var(--teal)}
+@media (max-width:760px){.rp-in{grid-template-columns:1fr}.rp-cover{max-width:420px}}
