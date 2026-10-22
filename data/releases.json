@@ -1,111 +1,141 @@
 {
-  "_howto": "Newest first. To add a release: copy one block, put it at the top, drop the cover in /covers. status = upcoming (shows Pre-save) or out (shows Buy/Listen). The first upcoming release becomes the homepage hero; if none is upcoming, the newest release does. preview = optional 30-second MP3 in /previews (never the WAV); it adds a play button on the homepage cover.",
-  "releases": [
-    {
-      "title": "As We Live",
-      "artists": "Danny Deleon feat. Morris Revy",
-      "genre": "Soulful House",
-      "status": "upcoming",
-      "date": "2026-11-06",
-      "preorderDate": "2026-10-23",
-      "cover": "covers/as-we-live.jpg",
-      "links": {
-        "presave": "https://hypeddit.com/dannydeleon/aswelive",
-        "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
-      },
-      "preview": "previews/as-we-live.mp3"
-    },
-    {
-      "title": "NONE AT ALL",
-      "artists": "NOFKS",
-      "status": "out",
-      "cover": "covers/none-at-all.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/none-at-all-original/7315890"
-      }
-    },
-    {
-      "title": "Waiting",
-      "artists": "Danny Boak",
-      "status": "out",
-      "cover": "covers/waiting.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/waiting/7078172"
-      }
-    },
-    {
-      "title": "Tempus Fugit (Richie Dio Remix)",
-      "artists": "Danny Deleon, Richie Dio",
-      "status": "out",
-      "cover": "covers/tempus-fugit-richie-dio-remix.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/tempus-fugit-richie-dio-remix/6790368"
-      }
-    },
-    {
-      "title": "Tempus Fugit",
-      "artists": "Danny Deleon",
-      "status": "out",
-      "cover": "covers/tempus-fugit.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/tempus-fugit-original/6431697",
-        "free": "https://hypeddit.com/dannydeleon/tempusfugitoriginalmix"
-      }
-    },
-    {
-      "title": "Dancing in The Light",
-      "artists": "Danny Deleon",
-      "status": "out",
-      "cover": "covers/dancing-in-the-light.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/dancing-in-the-light/5919171",
-        "free": "https://hypeddit.com/dannydeleon/dancinginthelightoriginalmix"
-      }
-    },
-    {
-      "title": "Keep Me In That Groove",
-      "artists": "Danny Deleon",
-      "status": "out",
-      "cover": "covers/keep-me-in-that-groove.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/keep-me-in-that-groove/5766172"
-      }
-    },
-    {
-      "title": "One Light",
-      "artists": "Mark Salner, Danny Deleon",
-      "status": "out",
-      "cover": "covers/one-light.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/one-light/5577409"
-      }
-    },
-    {
-      "title": "Oluwa Aye",
-      "artists": "Jon Mavek feat. Morris Revy",
-      "status": "out",
-      "cover": "covers/oluwa-aye.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/oluwa-aye/5554756"
-      }
-    },
-    {
-      "title": "RZ 440",
-      "artists": "Brooklyn Terry",
-      "status": "out",
-      "cover": "covers/rz-440.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/rz-440/5363400"
-      }
-    },
-    {
-      "title": "A La Vida",
-      "artists": "Danny Deleon",
-      "status": "out",
-      "cover": "covers/a-la-vida.jpg",
-      "links": {
-        "beatport": "https://www.beatport.com/release/a-la-vida/5305431"
-      }
-    }
-  ]
+ "_howto": "Newest first. To add a release: copy one block, put it at the top, drop the cover in /covers. status = upcoming (shows Pre-save) or out (shows Buy/Listen). The first upcoming release becomes the homepage hero; if none is upcoming, the newest release does. preview = optional 30-second MP3 in /previews (never the WAV); it adds a play button on the homepage cover.",
+ "releases": [
+  {
+   "title": "As We Live",
+   "artists": "Danny Deleon feat. Morris Revy",
+   "genre": "Soulful House",
+   "status": "upcoming",
+   "date": "2026-11-06",
+   "preorderDate": "2026-10-23",
+   "cover": "covers/as-we-live.jpg",
+   "links": {
+    "presave": "https://hypeddit.com/dannydeleon/aswelive",
+    "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
+   },
+   "preview": "previews/as-we-live.mp3"
+  },
+  {
+   "title": "NONE AT ALL",
+   "artists": "NOFKS",
+   "genre": "Deep House",
+   "status": "out",
+   "date": "2026-08-28",
+   "cover": "covers/none-at-all.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/none-at-all-original/7315890",
+    "traxsource": "https://www.traxsource.com/title/2852380/none-at-all-original"
+   }
+  },
+  {
+   "title": "Waiting",
+   "artists": "Danny Boak",
+   "genre": "Nu Disco / Indie Dance",
+   "status": "out",
+   "date": "2026-07-17",
+   "cover": "covers/waiting.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/waiting/7078172",
+    "traxsource": "https://www.traxsource.com/title/2816682/waiting-original"
+   }
+  },
+  {
+   "title": "Tempus Fugit (Richie Dio Remix)",
+   "artists": "Danny Deleon, Richie Dio",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2026-04-24",
+   "cover": "covers/tempus-fugit-richie-dio-remix.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/tempus-fugit-richie-dio-remix/6790368",
+    "traxsource": "https://www.traxsource.com/title/2767925/tempus-fugit"
+   }
+  },
+  {
+   "title": "Tempus Fugit",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2026-03-27",
+   "cover": "covers/tempus-fugit.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/tempus-fugit-original/6431697",
+    "free": "https://hypeddit.com/dannydeleon/tempusfugitoriginalmix",
+    "traxsource": "https://www.traxsource.com/title/2745474/tempus-fugit"
+   }
+  },
+  {
+   "title": "Dancing in The Light",
+   "artists": "Danny Deleon",
+   "genre": "Soulful House",
+   "status": "out",
+   "date": "2026-02-27",
+   "cover": "covers/dancing-in-the-light.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/dancing-in-the-light/5919171",
+    "free": "https://hypeddit.com/dannydeleon/dancinginthelightoriginalmix",
+    "traxsource": "https://www.traxsource.com/title/2721703/dancing-in-the-light"
+   }
+  },
+  {
+   "title": "Keep Me In That Groove",
+   "artists": "Danny Deleon",
+   "genre": "Soulful House",
+   "status": "out",
+   "date": "2026-01-16",
+   "cover": "covers/keep-me-in-that-groove.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/keep-me-in-that-groove/5766172",
+    "traxsource": "https://www.traxsource.com/title/2690188/keep-me-in-that-groove"
+   }
+  },
+  {
+   "title": "One Light",
+   "artists": "Mark Salner, Danny Deleon",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-12-05",
+   "cover": "covers/one-light.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/one-light/5577409",
+    "traxsource": "https://www.traxsource.com/title/2661084/one-light"
+   }
+  },
+  {
+   "title": "Oluwa Aye",
+   "artists": "Jon Mavek feat. Morris Revy",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-11-14",
+   "cover": "covers/oluwa-aye.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/oluwa-aye/5554756",
+    "traxsource": "https://www.traxsource.com/title/2654846/oluwa-aye"
+   }
+  },
+  {
+   "title": "RZ 440",
+   "artists": "Brooklyn Terry",
+   "genre": "House",
+   "status": "out",
+   "date": "2025-10-03",
+   "cover": "covers/rz-440.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/rz-440/5363400",
+    "traxsource": "https://www.traxsource.com/title/2615658/rz-440"
+   }
+  },
+  {
+   "title": "A La Vida",
+   "artists": "Danny Deleon",
+   "genre": "Tech House",
+   "status": "out",
+   "date": "2025-09-05",
+   "cover": "covers/a-la-vida.jpg",
+   "links": {
+    "beatport": "https://www.beatport.com/release/a-la-vida/5305431",
+    "traxsource": "https://www.traxsource.com/title/2603845/a-la-vida"
+   }
+  }
+ ]
 }
