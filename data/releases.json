@@ -136,6 +136,194 @@
     "beatport": "https://www.beatport.com/release/a-la-vida/5305431",
     "traxsource": "https://www.traxsource.com/title/2603845/a-la-vida"
    }
+  },
+  {
+   "title": "Criminal",
+   "artists": "Danny Deleon feat. S.A.N.E",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-08-29",
+   "cover": "covers/criminal.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2595680/criminal-feat-s-a-n-e"
+   }
+  },
+  {
+   "title": "Echoes De La Terra",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2025-08-08",
+   "cover": "covers/echoes-de-la-terra.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2582469/echoes-de-la-terra"
+   }
+  },
+  {
+   "title": "Stars",
+   "artists": "Ceevox",
+   "genre": "Deep House",
+   "status": "out",
+   "date": "2025-07-11",
+   "cover": "covers/stars.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2561509/stars"
+   }
+  },
+  {
+   "title": "Shine (Richie Dio Remix)",
+   "artists": "Danny Deleon feat. Precious James",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-06-20",
+   "cover": "covers/shine-richie-dio-remix.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2542663/shine-richie-dio-remix"
+   }
+  },
+  {
+   "title": "Shine",
+   "artists": "Danny Deleon feat. Precious James",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-04-25",
+   "cover": "covers/shine.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2509849/shine",
+    "free": "https://hypeddit.com/dannydeleon/shineradioedit"
+   }
+  },
+  {
+   "title": "Wahala",
+   "artists": "Danny Deleon feat. Precious James",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-03-28",
+   "cover": "covers/wahala.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2475579/wahala-feat-precious-james"
+   }
+  },
+  {
+   "title": "Hard To Pretend (Jon Mavek's Caveman Mix)",
+   "artists": "Richie Dio",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-03-14",
+   "cover": "covers/hard-to-pretend-jon-mavek-s-caveman-mix.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2465934/hard-to-pretend-jon-maveks-caveman-mix"
+   }
+  },
+  {
+   "title": "Shona Wave",
+   "artists": "Danny Deleon",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-02-21",
+   "cover": "covers/shona-wave.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2451002/shona-wave"
+   }
+  },
+  {
+   "title": "Voces De La Noche",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2025-02-14",
+   "cover": "covers/voces-de-la-noche.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2445028/voces-de-la-noche"
+   }
+  },
+  {
+   "title": "Hard To Pretend",
+   "artists": "Richie Dio",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2025-02-07",
+   "cover": "covers/hard-to-pretend.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2438532/hard-to-pretend"
+   }
+  },
+  {
+   "title": "MalaQuita",
+   "artists": "DJ Ody Roc",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2025-02-07",
+   "cover": "covers/malaquita.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2450226/malaquita"
+   }
+  },
+  {
+   "title": "Ritmo De Juancho",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2024-12-13",
+   "cover": "covers/ritmo-de-juancho.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2407695/ritmo-de-juancho"
+   }
+  },
+  {
+   "title": "Tu Carita",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2024-11-29",
+   "cover": "covers/tu-carita.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2400748/tu-carita"
+   }
+  },
+  {
+   "title": "Magic (Ceevox Remix)",
+   "artists": "Danny Deleon",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2024-11-15",
+   "cover": "covers/magic-ceevox-remix.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2386947/magic-ceevox-remix"
+   }
+  },
+  {
+   "title": "Esta Chíka",
+   "artists": "Danny Deleon",
+   "genre": "Afro / Latin / Brazilian",
+   "status": "out",
+   "date": "2024-11-01",
+   "cover": "covers/esta-ch-ka.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2382426/esta-chika"
+   }
+  },
+  {
+   "title": "Magic (Jon Mavek's Caveman Remix)",
+   "artists": "Danny Deleon",
+   "genre": "Afro House",
+   "status": "out",
+   "date": "2024-10-18",
+   "cover": "covers/magic-jon-mavek-s-caveman-remix.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2366788/magic-jon-maveks-caveman-remix"
+   }
+  },
+  {
+   "title": "Magic",
+   "artists": "Danny Deleon",
+   "genre": "Soulful House",
+   "status": "out",
+   "date": "2024-10-04",
+   "cover": "covers/magic.jpg",
+   "links": {
+    "traxsource": "https://www.traxsource.com/title/2363053/magic"
+   }
   }
  ]
 }
