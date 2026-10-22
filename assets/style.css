@@ -205,15 +205,15 @@ p{margin:0}
 .listen-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--s3)}
 .lcard{display:flex;flex-direction:column;gap:8px;padding:var(--s4);background:var(--ground);border:1px solid var(--hairline);border-radius:var(--r2);text-decoration:none;min-width:0;transition:border-color .2s,transform .2s}
 .lcard:hover{border-color:var(--muted);transform:translateY(-2px)}
-.lcard .plat{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.lcard .plat{display:flex;align-items:center;gap:8px;font:500 12px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:#3E372F}
 .lcard .plat i{width:10px;height:10px;border-radius:50%;background:var(--c,var(--gold))}
-.lcard b{font:800 20px/1.1 var(--f-display);letter-spacing:-.01em}
-.lcard p{color:var(--muted);font-size:14px;flex:1}
-.lcard .go{font-weight:700;font-size:14px;color:var(--teal);display:inline-flex;gap:6px}
+.lcard b{font:800 20px/1.1 var(--f-display);letter-spacing:-.01em;color:var(--ink)}
+.lcard p{color:#3E372F;font-size:14px;flex:1}
+.lcard .go{font-weight:700;font-size:14px;color:#0A4644;display:inline-flex;gap:6px}
 .lcard .go::after{content:"→";transition:transform .15s}
 .lcard:hover .go::after{transform:translateX(4px)}
 .lcard-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.lcard button.go{background:none;border:0;padding:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;color:var(--gold-ink)}
+.lcard button.go{background:none;border:0;padding:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;color:#6E4A12}
 .lcard button.go::after{content:"▶";font-size:10px}
 .booking{margin-top:var(--s4)!important;color:var(--ink)!important;font-weight:600}
 .booking a{color:var(--teal)}
