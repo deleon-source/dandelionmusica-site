@@ -155,7 +155,8 @@
   <div class="wrap foot-in">
     <div class="foot-brand">
       <div class="foot-brand-row"><img src="assets/label-logo.jpg" alt="" width="56" height="56">
-      <p>© <span id="year">2026</span> Dandelion Musica · Danny Deleon LLC · <a href="privacy/">Privacy</a></p></div>
+      <p>© <span id="year">2026</span> Dandelion Musica · Danny Deleon LLC<span id="privacy-link" hidden> · <a href="privacy/">Privacy</a></span></p>
+      <script>try{if(/^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone))document.getElementById("privacy-link").hidden=false}catch(e){}</script></div>
     </div>
     <div class="foot-social" id="social"></div>
   </div>
