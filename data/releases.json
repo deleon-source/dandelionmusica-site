@@ -16,6 +16,20 @@
    "preview": "previews/as-we-live.mp3"
   },
   {
+   "title": "Devotion",
+   "artists": "Ceevox",
+   "genre": "Progressive House",
+   "status": "upcoming",
+   "date": "2026-12-04",
+   "preorderDate": "2026-11-20",
+   "cover": "covers/devotion.jpg",
+   "links": {
+    "presave": "https://hypeddit.com/ceevox/devotion",
+    "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
+   },
+   "preview": "previews/devotion.mp3"
+  },
+  {
    "title": "NONE AT ALL",
    "artists": "NOFKS",
    "genre": "Deep House",
