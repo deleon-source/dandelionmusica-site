@@ -2,20 +2,6 @@
  "_howto": "Newest first. To add a release: copy one block, put it at the top, drop the cover in /covers. status = upcoming (shows Pre-save) or out (shows Buy/Listen). The first upcoming release becomes the homepage hero; if none is upcoming, the newest release does. preview = optional 30-second MP3 in /previews (never the WAV); it adds a play button on the homepage cover.",
  "releases": [
   {
-   "title": "As We Live (Jon Mavek's Caveman Mix)",
-   "artists": "Danny Deleon feat. Morris Revy",
-   "genre": "Afro House",
-   "status": "upcoming",
-   "date": "2027-01-08",
-   "preorderDate": "2026-12-28",
-   "cover": "covers/as-we-live-caveman-mix.jpg",
-   "links": {
-    "presave": "https://hypeddit.com/dannydeleon/aswelivecaveman",
-    "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
-   },
-   "preview": "previews/as-we-live-caveman-mix.mp3"
-  },
-  {
    "title": "As We Live",
    "artists": "Danny Deleon feat. Morris Revy",
    "genre": "Soulful House",
@@ -42,6 +28,20 @@
     "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
    },
    "preview": "previews/devotion.mp3"
+  },
+  {
+   "title": "As We Live (Jon Mavek's Caveman Mix)",
+   "artists": "Danny Deleon feat. Morris Revy",
+   "genre": "Afro House",
+   "status": "upcoming",
+   "date": "2027-01-08",
+   "preorderDate": "2026-12-28",
+   "cover": "covers/as-we-live-caveman-mix.jpg",
+   "links": {
+    "presave": "https://hypeddit.com/dannydeleon/aswelivecaveman",
+    "traxsource": "https://www.traxsource.com/label/72242/dandelion-musica"
+   },
+   "preview": "previews/as-we-live-caveman-mix.mp3"
   },
   {
    "title": "NONE AT ALL",
