@@ -96,6 +96,45 @@ def page(r, today):
 </html>
 """
 
+def short_date(iso):
+    y, m, d = iso.split("-"); return f"{MONTHS[int(m)-1]} {int(d)}"
+
+def hero_pick(rel, today):
+    up = sorted([r for r in rel if r.get("status") == "upcoming" and r.get("date", "") > today], key=lambda r: r["date"])
+    return up[0] if up else sorted(rel, key=lambda r: r.get("date", ""), reverse=True)[0]
+
+def patch_home(rel, today):
+    """Keeps the homepage's static hero and share-preview (og:image) in step with the hero the page script picks,
+    so link previews (iMessage, WhatsApp, Facebook) show the next release, not an old one."""
+    r = hero_pick(rel, today)
+    up = r.get("status") == "upcoming" and r.get("date", "") > today
+    L = r.get("links", {}); btns = ""
+    def a(href, label, cls): return f'<a class="btn {cls}" href="{e(href)}" target="_blank" rel="noopener">{e(label)}</a>'
+    if up:
+        if L.get("presave"): btns += a(L["presave"], "Pre-save", "btn-teal")
+        if L.get("traxsource") and r.get("preorderDate"):
+            btns += a(L["traxsource"], ("Pre-order" if r["preorderDate"] <= today else "Pre-order " + short_date(r["preorderDate"])) + " on Traxsource", "btn-gold")
+        meta = (f'Traxsource exclusive {short_date(r["preorderDate"])} · Everywhere {short_date(r["date"])}' if r.get("preorderDate") else f'Everywhere {long_date(r["date"])}')
+        chip = "Out " + short_date(r["date"])
+    else:
+        listen = L.get("smartlink") or L.get("spotify") or L.get("presave")
+        if listen: btns += a(listen, "Listen now", "btn-teal")
+        buy = L.get("traxsource") or L.get("beatport")
+        if buy: btns += a(buy, "Buy on " + ("Traxsource" if L.get("traxsource") else "Beatport"), "btn-gold")
+        meta = f'Released {long_date(r["date"])}' if r.get("date") else "Out now on Dandelion Musica"
+        chip = "Out now"
+    if r.get("genre"): chip += " · " + r["genre"]
+    p = os.path.join(ROOT, "index.html"); h = open(p).read()
+    h = re.sub(r'(<meta property="og:image" content=")[^"]*(">)', lambda m: f'{m.group(1)}{SITE}/{e(r["cover"])}{m.group(2)}', h, count=1)
+    h = re.sub(r'(<img id="hero-cover" class="cover" src=")[^"]*(" alt=")[^"]*(")', lambda m: f'{m.group(1)}{e(r["cover"])}{m.group(2)}{e(r["title"])} cover art{m.group(3)}', h, count=1)
+    h = re.sub(r'(<p class="chip chip-clay" id="hero-chip">)[^<]*(</p>)', lambda m: m.group(1)+e(chip)+m.group(2), h, count=1)
+    h = re.sub(r'(<h1 id="hero-title">)[^<]*(</h1>)', lambda m: m.group(1)+e(r["title"])+m.group(2), h, count=1)
+    h = re.sub(r'(<p class="hero-artist" id="hero-artist">)[^<]*(</p>)', lambda m: m.group(1)+e(r["artists"])+m.group(2), h, count=1)
+    h = re.sub(r'(<div class="actions" id="hero-actions">).*?(</div>)', lambda m: m.group(1)+btns+m.group(2), h, count=1, flags=re.S)
+    h = re.sub(r'(<p class="meta" id="hero-meta">)[^<]*(</p>)', lambda m: m.group(1)+e(meta)+m.group(2), h, count=1)
+    open(p, "w").write(h)
+    return r
+
 def main():
     today = datetime.date.today().isoformat()
     rel = json.load(open(os.path.join(ROOT, "data/releases.json")))["releases"]
@@ -105,6 +144,8 @@ def main():
         d = os.path.join(ROOT, "music", s); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, "index.html"), "w").write(doc)
         urls.append((f"{SITE}/music/{s}/", today))
+    hr = patch_home(rel, today)
+    print("homepage hero + share preview:", hr["title"])
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + \
          "".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls) + "</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)

@@ -1,0 +1,21 @@
+name: Daily homepage rebuild
+# Keeps the homepage hero and link-share preview on the next upcoming release.
+# Runs shortly after midnight Eastern; commits only if something changed.
+on:
+  schedule:
+    - cron: "10 5 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/build_pages.py
+      - name: Commit if changed
+        run: |
+          git config user.name "dandelion-site-bot"
+          git config user.email "noreply@dandelionmusica.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "Daily rebuild: homepage hero and share preview" && git push)

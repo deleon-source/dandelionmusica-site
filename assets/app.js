@@ -20,8 +20,15 @@
   // A release is "upcoming" until its date passes, even if the JSON still says upcoming.
   function isUpcoming(r) { return r.status === "upcoming" && (!r.date || r.date > today()); }
 
+  function byDateDesc(a, b) { return String(b.date || "").localeCompare(String(a.date || "")); }
+  function heroPick(releases) {
+    var up = releases.filter(isUpcoming).sort(function (a, b) { return String(a.date || "").localeCompare(String(b.date || "")); });
+    return up[0] || releases.slice().sort(byDateDesc)[0];
+  }
+
   function renderHero(releases) {
-    var r = releases.find(isUpcoming) || releases[0];
+    // Hero = the soonest upcoming release; if nothing is upcoming, the newest release.
+    var r = heroPick(releases);
     if (!r) return;
     heroRelease = r;
     var up = isUpcoming(r);
@@ -77,7 +84,7 @@
 
   function renderTicker(releases, news) {
     var items = [];
-    releases.filter(isUpcoming).forEach(function (r) {
+    releases.filter(isUpcoming).sort(function (a, b) { return String(a.date || "").localeCompare(String(b.date || "")); }).forEach(function (r) {
       if (r.preorderDate) items.push("<b>" + esc(r.title) + "</b> Traxsource pre-order " + fmt(r.preorderDate));
       items.push("<b>" + esc(r.title) + "</b> out everywhere " + fmt(r.date));
     });
@@ -89,7 +96,8 @@
   }
 
   function renderReleases(releases) {
-    $("release-grid").innerHTML = releases.map(function (r) {
+    // Newest / furthest-out release first, so upcoming releases sit above the ones already out.
+    $("release-grid").innerHTML = releases.slice().sort(byDateDesc).map(function (r) {
       var up = isUpcoming(r), L = r.links || {};
       var links = Object.keys(L).filter(function (k) { return LINK_LABELS[k]; }).map(function (k) {
         return ext(L[k], LINK_LABELS[k], k === "presave" ? "primary" : "", LINK_LABELS[k] + ": " + r.title);
